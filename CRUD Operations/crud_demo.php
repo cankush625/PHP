@@ -1,5 +1,11 @@
 <?php
 	$conn = mysqli_connect("localhost", "root", "");
+	if($conn){
+		echo "<h1>YAY!!!! CONNECTED SUCESSFULLY!!!!</h1>";
+	}
+	else{
+		die("<h1>UNABLE TO CONNECT SERVER!!!!</h1>");
+	}
 	mysqli_select_db($conn, "user");
 ?>
 <html>
@@ -25,6 +31,13 @@
 			Enter name : <input type="text" name="uname" required>
 			<input type="submit" name="upname" value="Update">
 		</form>
+		<select name="test">
+			<?php
+				for($i = 1; $i < 10; $i++){
+					echo "<option value='$i'>$i</option>";
+				}
+			?>
+		</select><br>
 		<span>Enter Username to search : <input type="text" name="sname" required></span>
 		<input type="submit" name="search" value="Search"><br>
 
